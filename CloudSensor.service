@@ -1,0 +1,15 @@
+[Unit]
+Description=CloudSensor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/src/CloudSensor/cron-skytemp.py
+WorkingDirectory=/home/pi/src/CloudSensor
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
